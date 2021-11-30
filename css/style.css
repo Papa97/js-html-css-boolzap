@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(4, 193, 0);
+  background: linear-gradient(
+    180deg,
+    rgb(0, 151, 113) 30%,
+    rgba(205, 205, 205, 1) 30%
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+i {
+  color: #bababa;
+  padding: 0 5px;
+  margin-right: 10px;
+}
+
+#root {
+  margin-top: 20px;
+}
+.container {
+  width: 75%;
+  margin: auto;
+  background-color: white;
+  max-height: calc(100vh - 20px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-1 {
+  width: 35%;
+}
+
+.col-2 {
+  width: 65%;
+}
+
+.prova {
+  margin-top: 10px;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prova img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-data {
+  display: flex;
+}
+
+.notifiche {
+  display: flex;
+  background-color: rgb(0, 217, 255);
+  padding: 10px 10px;
+}
+
+.notifiche i {
+  background-color: white;
+  margin-top: 3px;
+  border-radius: 50%;
+  color: rgb(0, 217, 255);
+  padding: 5px 5px;
+  font-size: 28px;
+}
+
+.sottotitolo {
+  text-decoration: underline;
+  color: rgb(85, 85, 85);
+}
+
+.search-contact {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.search-contact input {
+  border: none;
+  text-align: center;
+  width: 87%;
+}
+
+.search-contact i {
+  width: 8%;
+}
+.contact {
+  width: 100%;
+}
+
+.contatti {
+  overflow-y: scroll;
+}
+
+.contact img {
+  height: 75px;
+  border-radius: 50%;
+}
+.top-chat {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.nome-interlocutore {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.icons {
+  line-height: 50px;
+}
+.friend-data {
+  display: flex;
+}
+
+.friend-data img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.right-bottom {
+  height: 75px;
+  background-color: rgb(240, 239, 191);
+  display: flex;
+  align-items: center;
+}
+
+.right-bottom input {
+  width: 90%;
+  height: 40px;
+  border: none;
+}
+
+.right-bottom i {
+  width: 5%;
+}
+
+.chat-generale {
+  background-image: url(../img/mine.jpg);
+  height: 360px;
+  overflow-y: scroll;
+}
+
+.messaggio {
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.sent {
+  background-color: rgb(145, 248, 145);
+  width: 200px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.received {
+  background-color: white;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.message-date {
+  font-size: 10px;
+  text-align: right;
+  color: #bababa;
+}
+
+.contact ul li:hover {
+  background-color: rgb(240, 239, 191);
+}
+
+.active-user {
+  background-color: rgb(240, 239, 191);
+}

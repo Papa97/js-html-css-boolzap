@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <!-- colonna di sinistra -->
+        <div class="col-1">
+          <!-- dati dell'user -->
+
+          <div class="prova">
+            <div class="user-data">
+              <img src="img/avatar_io.jpg" alt="" />
+              <span class="user-name"><strong> Nome Utente</strong> </span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <!-- /dati dell'user -->
+          <!-- informazioni su notifiche -->
+          <div class="notifiche">
+            <div><i class="fas fa-bell-slash"></i></div>
+            <div>
+              <div><strong> Ricevi notifiche di nuovi messaggi</strong></div>
+              <div class="sottotitolo">Attiva notifiche desktop</div>
+            </div>
+          </div>
+          <!-- /informazioni su notifiche -->
+          <!-- elenco contatti -->
+          <div class="search-contact">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="cerca o inizia una nuova chat" />
+          </div>
+          <div class="contatti">
+            <div class="contact">
+              <ul>
+                <li
+                  v-for="(contatto,index) in contacts"
+                  @click="changeUser(index)"
+                >
+                  <img :src="contatto.avatar" alt="" />
+                  <span>{{contatto.name}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /colonna di sinistra -->
+        <!-- colonna di destra -->
+
+        <div class="col-2">
+          <div class="top-chat">
+            <div class="friend-data">
+              <div><img src="img/avatar_1.jpg" alt="" /></div>
+              <div class="nome-interlocutore">
+                <div>Michele</div>
+                <div>ultimo accesso oggi alle</div>
+              </div>
+            </div>
+            <div class="icons">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="chat-generale">
+            <div
+              v-for="messaggio in contacts[utente].messages"
+              :class="messaggio.status"
+              class="messaggio"
+            >
+              <div>{{messaggio.message}}</div>
+              <div class="message-date">{{messaggio.date}}</div>
+            </div>
+          </div>
+          <div class="right-bottom">
+            <i class="far fa-smile"></i>
+            <input type="text" placeholder="Scrivi un messaggio" />
+            <i class="fas fa-microphone"></i>
+          </div>
+        </div>
+        <!-- /colonna di destra -->
+      </div>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
