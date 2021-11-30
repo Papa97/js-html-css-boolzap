@@ -42,15 +42,16 @@ i {
   width: 65%;
 }
 
-.prova {
+.user {
   margin-top: 10px;
-  height: 50px;
+  /* height: 50px; */
+  padding: 12px 0;
   line-height: 50px;
   display: flex;
   justify-content: space-between;
 }
 
-.prova img {
+.user img {
   height: 50px;
   border-radius: 50%;
 }
@@ -109,7 +110,7 @@ i {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  height: 50px;
+  padding: 10px 0;
 }
 
 .nome-interlocutore {
@@ -182,5 +183,5 @@ i {
 }
 
 .active-user {
-  background-color: rgb(240, 239, 191);
+  background-color: rgb(238, 236, 127);
 }

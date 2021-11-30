@@ -27,7 +27,7 @@
         <div class="col-1">
           <!-- dati dell'user -->
 
-          <div class="prova">
+          <div class="user">
             <div class="user-data">
               <img src="img/avatar_io.jpg" alt="" />
               <span class="user-name"><strong> Nome Utente</strong> </span>
@@ -74,9 +74,9 @@
         <div class="col-2">
           <div class="top-chat">
             <div class="friend-data">
-              <div><img src="img/avatar_1.jpg" alt="" /></div>
+              <div><img :src="contacts[utente].avatar" alt="" /></div>
               <div class="nome-interlocutore">
-                <div>Michele</div>
+                <div>{{contacts[utente].name}}</div>
                 <div>ultimo accesso oggi alle</div>
               </div>
             </div>
