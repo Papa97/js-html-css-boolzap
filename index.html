@@ -59,6 +59,7 @@
                 <li
                   v-for="(contatto,index) in contacts"
                   @click="changeUser(index)"
+                  :class="index == utente ? 'active-user' : ''"
                 >
                   <img :src="contatto.avatar" alt="" />
                   <span>{{contatto.name}}</span>
