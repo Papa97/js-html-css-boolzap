@@ -94,17 +94,11 @@ const app = new Vue({
             this.contacts[this.utente].messages.push({date: '10/01/2020 16:50:00', message:this.inviaMessaggio, status: 'sent' });
             this.inviaMessaggio = '';
 
-            let arrayContacts = this.contacts;
-            let utenteTiming = this.utente;
-            setTimeout(function(){
-                console.log(arrayContacts , 'dentro la timing function');
-                // this.contacts[this.utente].messages.push({date: '10/10/20 ', message: 'ok' , status: 'received' });
-                // console.log(utenteTiming , 'utente dentro la timing function');
+            setTimeout(() => {
+                this.contacts[this.utente].messages.push({date:'10/10/2020 15:55:00' , message:'ok', status: 'received'})
+            }, 1000)
 
-                arrayContacts[utenteTiming].messages.push({date:'10/10/2020 15:55:00' , message:'ok', status: 'received'})
-
-            }
-            ,1000);
+            
         }
     }
 
