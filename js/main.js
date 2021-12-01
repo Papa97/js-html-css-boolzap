@@ -4,7 +4,7 @@ const app = new Vue({
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'img/avatar_1.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
@@ -25,7 +25,7 @@ const app = new Vue({
             },
             {
                 name: 'Fabio',
-                avatar: 'img/avatar_2.jpg',
+                avatar: '_2',
                 visible: true,
                 messages: [{
                     date: '20/03/2020 16:30:00',
@@ -46,7 +46,7 @@ const app = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: 'img/avatar_3.jpg',
+                avatar: '_3',
                 visible: true,
                 messages: [{
                     date: '28/03/2020 10:10:40',
@@ -67,7 +67,7 @@ const app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: 'img/avatar_4.jpg',
+                avatar: '_4',
                 visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
@@ -83,12 +83,22 @@ const app = new Vue({
             },
         ],
         utente: 0,
-        selectedUser : 0,
+        inviaMessaggio: '',
         
     },
     methods: {
         changeUser : function (i){
             this.utente = i
+        },
+        addMessage :  function (){
+            this.contacts[this.utente].messages.push({date: '10/01/2020 16:50:00', message:this.inviaMessaggio, status: 'sent' });
+            this.inviaMessaggio = '';
+
+            setTimeout(function(){
+                // this.contacts[this.utente].messages.push({date: '10/01/2020 16:50:00', message:'ok', status: 'received' });
+                this.contacts[this.utente].messages.push({date: '10/10/20 ', message: 'ok' , status: 'received' })
+            }
+            ,3000);
         }
     }
 

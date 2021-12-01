@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,300&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -54,18 +54,19 @@
             <input type="text" placeholder="cerca o inizia una nuova chat" />
           </div>
           <div class="contatti">
-            <div class="contact">
-              <ul>
-                <li
-                  v-for="(contatto,index) in contacts"
-                  @click="changeUser(index)"
-                  :class="index == utente ? 'active-user' : ''"
-                >
-                  <img :src="contatto.avatar" alt="" />
-                  <span>{{contatto.name}}</span>
-                </li>
-              </ul>
-            </div>
+            <ul>
+              <li
+                v-for="(contatto,index) in contacts"
+                @click="changeUser(index)"
+                :class="index == utente ? 'active-user' : ''"
+              >
+                <img
+                  :src="`./img/avatar${contatto.avatar}.jpg`"
+                  :alt="contatto.name"
+                />
+                <span>{{contatto.name}}</span>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- /colonna di sinistra -->
@@ -88,7 +89,7 @@
           </div>
           <div class="chat-generale">
             <div
-              v-for="messaggio in contacts[utente].messages"
+              v-for="(messaggio,index) in contacts[utente].messages"
               :class="messaggio.status"
               class="messaggio"
             >
@@ -98,7 +99,12 @@
           </div>
           <div class="right-bottom">
             <i class="far fa-smile"></i>
-            <input type="text" placeholder="Scrivi un messaggio" />
+            <input
+              type="text"
+              placeholder="Scrivi un messaggio"
+              v-model="inviaMessaggio"
+              @keyup.enter="addMessage()"
+            />
             <i class="fas fa-microphone"></i>
           </div>
         </div>
