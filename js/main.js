@@ -83,6 +83,7 @@ const app = new Vue({
             },
         ],
         utente: 0,
+        ricerca: '' ,
         inviaMessaggio: '',
         
     },
@@ -97,11 +98,22 @@ const app = new Vue({
             setTimeout(() => {
                 this.contacts[this.utente].messages.push({date:'10/10/2020 15:55:00' , message:'ok', status: 'received'})
             }, 1000)
+        },
+        cercaUser : function (){
+            for (let i = 0; i < this.contacts.length ; i++){
+                console.log(i);
+                if (this.contacts[i].name.includes(this.ricerca)){
+                    this.contacts.visible = true;
+                    console.log('vero');
+                } else {
+                    this.contacts.visible = false;
+                    console.log('falso');
 
+                }
+            }
             
-        }
+        },
     }
-
-
+    
 });
 
