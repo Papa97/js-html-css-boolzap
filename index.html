@@ -51,7 +51,12 @@
           <!-- elenco contatti -->
           <div class="search-contact">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="cerca o inizia una nuova chat" />
+            <input
+              type="text"
+              placeholder="cerca o inizia una nuova chat"
+              v-model="ricerca"
+              @keyup.enter="cercaUser()"
+            />
           </div>
           <div class="contatti">
             <ul>
@@ -59,6 +64,7 @@
                 v-for="(contatto,index) in contacts"
                 @click="changeUser(index)"
                 :class="index == utente ? 'active-user' : ''"
+                v-show=""
               >
                 <img
                   :src="`./img/avatar${contatto.avatar}.jpg`"
